@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unique Pharmacy – 24×7 licensed medical store. Up to 18% off medicines, home delivery, genuine products, pharmacist always available.">
+
+<!-- Open Graph / WhatsApp Preview -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Unique Pharmacy – 24×7 Trusted Medical Store">
+<meta property="og:description" content="Order medicines on WhatsApp • 18% OFF • Free delivery within 2 KM • Genuine products • Pharmacist always available">
+<meta property="og:image"       content="https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg">
+<meta property="og:image:width"  content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:site_name"   content="Unique Pharmacy">
+
+<!-- Twitter / WhatsApp fallback -->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="Unique Pharmacy – 24×7 Trusted Medical Store">
+<meta name="twitter:description" content="Order medicines on WhatsApp • 18% OFF • Free delivery within 2 KM">
+<meta name="twitter:image"       content="https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg">
+<meta name="theme-color" content="#7b3fe4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Unique Pharmacy">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg">
+<link rel="manifest" id="manifestLink">
+<title>UNIQUE PHARMACY – 24×7 Trusted Medical Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple:  #7b3fe4;
+  --purple2: #9c27b0;
+  --orange:  #ff6f00;
+  --green:   #00c853;
+  --surface: rgba(255,255,255,0.78);
+  --radius:  18px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(150deg, #f3e8ff 0%, #ede9fe 50%, #e8f5e9 100%);
+  min-height: 100vh;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  color: #1a1a2e;
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, #4a0080, #7b3fe4, #9c27b0);
+  color: #fff;
+  padding: 28px 20px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── LOGO ── */
+.header-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.15);
+}
+
+.logo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.5);
+  margin: 0 auto 10px;
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.header-address {
+  font-size: 11px;
+  opacity: 0.75;
+  margin: 2px 0 10px;
+  line-height: 1.5;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-size: clamp(22px, 6vw, 30px);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 4px 0 4px;
+}
+
+.badge-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+.badge {
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.badge.open  { background: #00e676; color: #003300; }
+.badge.phone { background: rgba(255,255,255,0.2); color: #fff; text-decoration: none; }
+
+/* ── TRUST BAR ── */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+
+.trust-pill {
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(123,63,228,0.10);
+}
+
+/* ── SEARCH ── */
+.search-wrap {
+  margin: 0 15px 5px;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 14px 50px 14px 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(123,63,228,0.2);
+  background: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-wrap input:focus { border-color: var(--purple); }
+
+.search-wrap button {
+  position: absolute;
+  right: 8px; top: 50%;
+  transform: translateY(-50%);
+  background: var(--purple);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  width: 36px; height: 36px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin: 12px 15px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* ── DISCOUNT PILLS ── */
+.disc-list { display: flex; flex-direction: column; gap: 8px; }
+
+.disc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.disc-item span:first-child { font-size: 14px; }
+
+.disc-badge {
+  background: var(--purple);
+  color: #fff;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #7b3fe4, #9c27b0);
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn:active { transform: scale(0.94); }
+.btn .ico { font-size: 20px; }
+
+/* ── REVIEWS SLIDER ── */
+.slider-outer {
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+  padding: 14px 16px;
+}
+
+.slider-track {
+  display: flex;
+  width: 400%;          /* 4 slides × 100% */
+  animation: carousel 16s infinite;
+}
+
+.slide {
+  width: 25%;           /* 100% ÷ 4 slides */
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a0080;
+  line-height: 1.5;
+}
+
+@keyframes carousel {
+  0%,20%   { transform: translateX(0); }
+  25%,45%  { transform: translateX(-25%); }
+  50%,70%  { transform: translateX(-50%); }
+  75%,95%  { transform: translateX(-75%); }
+  100%     { transform: translateX(0); }
+}
+
+/* ── MAP (lazy) ── */
+.map-thumb {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#ede9fe,#d1c4e9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+  border: 2px dashed rgba(123,63,228,0.3);
+}
+
+.map-thumb .map-ico { font-size: 36px; }
+
+.map-frame {
+  display: none;
+  width: 100%;
+  height: 240px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* ── PRESCRIPTION CARD ── */
+.rx-card {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border: 2px solid rgba(255,111,0,0.25);
+  cursor: pointer;
+  transition: transform 0.15s;
+  padding: 16px 18px;
+}
+
+.rx-card:active { transform: scale(0.98); }
+
+.rx-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rx-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.rx-text {
+  flex: 1;
+}
+
+.rx-text strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: #e65100;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.rx-text p {
+  font-size: 12px;
+  color: #bf360c;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.rx-arrow {
+  font-size: 22px;
+  color: #e65100;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── ADD TO HOME SCREEN BANNER ── */
+.a2hs-banner {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #4a0080, #7b3fe4);
+  color: #fff;
+  padding: 14px 16px;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: slideDown 0.4s ease;
+}
+
+.a2hs-banner.show { display: flex; }
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.a2hs-logo {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.a2hs-text { flex: 1; }
+.a2hs-text strong { font-size: 13px; display: block; }
+.a2hs-text span   { font-size: 11px; opacity: 0.8; }
+
+.a2hs-install {
+  background: #fff;
+  color: #7b3fe4;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.a2hs-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 2px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* iOS instruction tooltip */
+.ios-tip {
+  display: none;
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  left: 50%; transform: translateX(-50%);
+  background: #1a1a2e;
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 13px;
+  text-align: center;
+  z-index: 9999;
+  width: calc(100% - 40px);
+  max-width: 360px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  animation: fadeUp 0.3s ease;
+  line-height: 1.6;
+}
+
+.ios-tip.show { display: block; }
+
+@keyframes fadeUp {
+  from { transform: translateX(-50%) translateY(10px); opacity: 0; }
+  to   { transform: translateX(-50%) translateY(0);    opacity: 1; }
+}
+
+.ios-tip-close {
+  display: inline-block;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ── NOTICE ── */
+.notice {
+  background: #fff8e1;
+  border-left: 4px solid #ff9800;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #2d0b52;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 13px;
+  line-height: 2;
+}
+
+footer strong { color: #fff; }
+footer a { color: #cf9fff; text-decoration: none; }
+
+/* ── WHATSAPP FLOAT ── */
+.whatsapp {
+  position: fixed;
+  bottom: calc(90px + env(safe-area-inset-bottom));
+  right: 18px;
+  width: 56px; height: 56px;
+  z-index: 1000;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.25));
+  transition: transform 0.2s;
+}
+
+.whatsapp:active { transform: scale(0.9); }
+.whatsapp img { width: 100%; height: 100%; }
+
+/* ── DOCK ── */
+.dock {
+  position: fixed;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 50%; transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  max-width: 440px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.13), 0 2px 10px rgba(0,0,0,0.07);
+  z-index: 999;
+}
+
+.dock-btn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.dock-btn:active { transform: scale(0.95); }
+
+.dock-btn.order  { background: linear-gradient(135deg,#7b3fe4,#9c27b0); }
+.dock-btn.rx     { background: linear-gradient(135deg,#ff6f00,#ff5722); }
+.dock-btn.call   { background: linear-gradient(135deg,#00897b,#00c853); }
+</style>
+</head>
+
+<body>
+
+<!-- ══ ADD TO HOME SCREEN BANNER ══ -->
+<div class="a2hs-banner" id="a2hsBanner">
+  <img class="a2hs-logo" src="https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg" alt="Logo">
+  <div class="a2hs-text">
+    <strong>Add to Home Screen</strong>
+    <span>Get quick access like an app!</span>
+  </div>
+  <button class="a2hs-install" id="a2hsInstall">Install</button>
+  <button class="a2hs-close" id="a2hsClose">×</button>
+</div>
+
+<!-- iOS tip tooltip -->
+<div class="ios-tip" id="iosTip">
+  📲 To install: tap <strong>Share ↑</strong> in Safari<br>then choose <strong>"Add to Home Screen"</strong>
+  <br><button class="ios-tip-close" id="iosTipClose">Got it</button>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <img class="header-logo" src="https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg" alt="Unique Pharmacy Logo">
+  <h1>UNIQUE PHARMACY</h1>
+  <p>24×7 Trusted Medical Store</p>
+  <p class="header-address">📍 Shop No. G55, Al Ezz Tower, Bohri Mohalla,<br>Bhendi Bazaar, Kumbharwada, Mumbai – 400003</p>
+  <div class="badge-row">
+    <span class="badge open">🟢 OPEN NOW</span>
+    <a class="badge phone" href="tel:+919594290148">📞 +91 95942 90148</a>
+  </div>
+</header>
+
+<!-- ══ TRUST PILLS ══ -->
+<div class="trust">
+  <div class="trust-pill">🏥 Licensed Store</div>
+  <div class="trust-pill">💊 Genuine Medicines</div>
+  <div class="trust-pill">👨‍⚕️ Pharmacist Available</div>
+  <div class="trust-pill">⏰ 24×7 Service</div>
+</div>
+
+<!-- ══ SEARCH ══ -->
+<div class="search-wrap">
+  <input type="text" id="searchInput" placeholder="Search medicine or product…" />
+  <button onclick="searchMedicine()" aria-label="Search">🔍</button>
+</div>
+
+<!-- ══ DISCOUNTS ══ -->
+<div class="card">
+  <h2>💸 Today's Discounts</h2>
+  <div class="disc-list">
+    <div class="disc-item">
+      <span>💊 Medicines &amp; Surgicals</span>
+      <span class="disc-badge">18% OFF</span>
+    </div>
+    <div class="disc-item">
+      <span>💉 Insulin &amp; Injections</span>
+      <span class="disc-badge">15% OFF</span>
+    </div>
+    <div class="disc-item">
+      <span>🧪 Special Medicines</span>
+      <span class="disc-badge">10% OFF</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRESCRIPTION CARD ══ -->
+<div class="card rx-card" onclick="prescription()">
+  <div class="rx-inner">
+    <div class="rx-icon">📋</div>
+    <div class="rx-text">
+      <strong>Have a Prescription?</strong>
+      <p>Send it on WhatsApp and we'll arrange your medicines instantly</p>
+    </div>
+    <div class="rx-arrow">→</div>
+  </div>
+</div>
+
+<!-- ══ MEDICAL ══ -->
+<div class="card">
+  <h2>🧾 Medical</h2>
+  <div class="grid">
+    <div class="btn" onclick="order('Diabetic Medicines')"><span class="ico">🩸</span>Diabetic</div>
+    <div class="btn" onclick="order('Cardiac Medicines')"><span class="ico">❤️</span>Cardiac</div>
+    <div class="btn" onclick="order('Skin Medicines')"><span class="ico">🧴</span>Skin</div>
+    <div class="btn" onclick="order('Pain Relief')"><span class="ico">💊</span>Pain</div>
+    <div class="btn" onclick="order('Antibiotics')"><span class="ico">🦠</span>Antibiotics</div>
+    <div class="btn" onclick="order('Baby Care')"><span class="ico">👶</span>Baby</div>
+    <div class="btn" onclick="order('Vitamins & Supplements')"><span class="ico">🌿</span>Vitamins</div>
+    <div class="btn" onclick="order('Eye Care')"><span class="ico">👁️</span>Eye</div>
+    <div class="btn" onclick="order('First Aid')"><span class="ico">🩹</span>First Aid</div>
+    <div class="btn" onclick="order('Ayurvedic Medicines')"><span class="ico">🌱</span>Ayurvedic</div>
+    <div class="btn" onclick="order('Respiratory Medicines')"><span class="ico">🫁</span>Respiratory</div>
+    <div class="btn" onclick="order("Women's Health Products")"><span class="ico">🩷</span>Women's</div>
+  </div>
+</div>
+
+<!-- ══ GENERAL ══ -->
+<div class="card">
+  <h2>🛍️ General Products</h2>
+  <div class="grid">
+    <div class="btn" onclick="order('Protein Supplements')"><span class="ico">💪</span>Protein</div>
+    <div class="btn" onclick="order('Health Drinks')"><span class="ico">🥤</span>Drinks</div>
+    <div class="btn" onclick="order('Skin Care Products')"><span class="ico">✨</span>Skin Care</div>
+    <div class="btn" onclick="order('Hair Care Products')"><span class="ico">💇</span>Hair</div>
+    <div class="btn" onclick="order('Hygiene Products')"><span class="ico">🧼</span>Hygiene</div>
+    <div class="btn" onclick="order('Baby Products')"><span class="ico">🍼</span>Baby</div>
+    <div class="btn" onclick="order('Sanitary Products')"><span class="ico">🌸</span>Sanitary</div>
+    <div class="btn" onclick="order('Medical Devices')"><span class="ico">🩺</span>Devices</div>
+    <div class="btn" onclick="order('Fitness & Wellness Products')"><span class="ico">🏃</span>Fitness</div>
+    <div class="btn" onclick="order('Daily Essentials')"><span class="ico">🛒</span>Essentials</div>
+    <div class="btn" onclick="order('Dental Care Products')"><span class="ico">🦷</span>Dental</div>
+    <div class="btn" onclick="order('Surgical Items')"><span class="ico">🔬</span>Surgical</div>
+  </div>
+</div>
+
+<!-- ══ DELIVERY ══ -->
+<div class="card">
+  <h2>🚚 Delivery Info</h2>
+  <div class="disc-list">
+    <div class="disc-item"><span>🛍️ Minimum order</span><span class="disc-badge">₹500</span></div>
+    <div class="disc-item"><span>🟢 Within 2 KM</span><span class="disc-badge">FREE</span></div>
+    <div class="disc-item"><span>📦 Nationwide courier</span><span class="disc-badge">Charges apply</span></div>
+  </div>
+</div>
+
+<!-- ══ REVIEWS ══ -->
+<div class="card">
+  <h2>⭐ Customer Reviews</h2>
+  <div class="slider-outer">
+    <div class="slider-track">
+      <div class="slide">⭐⭐⭐⭐⭐ &nbsp;"Fast delivery and genuine medicines! Highly recommended."</div>
+      <div class="slide">⭐⭐⭐⭐⭐ &nbsp;"Best discounts in the area. Always my first choice!"</div>
+      <div class="slide">⭐⭐⭐⭐⭐ &nbsp;"Very professional staff. Helped me find the right medicine."</div>
+      <div class="slide">⭐⭐⭐⭐⭐ &nbsp;"24/7 availability is a lifesaver. Thank you Unique Pharmacy!"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ STORE LOCATION ══ -->
+<div class="card">
+  <h2>📍 Store Location</h2>
+  <!-- Lazy-loaded map -->
+  <div class="map-thumb" id="mapThumb" onclick="loadMap()">
+    <span class="map-ico">🗺️</span>
+    <span>Tap to view on map</span>
+    <small style="color:#888;font-size:11px;">Loads Google Maps</small>
+  </div>
+  <!--
+    IMPORTANT: Replace the src below with your real Google Maps embed URL.
+    Go to maps.google.com → search your store → Share → Embed a map → Copy link
+  -->
+  <iframe
+    id="mapFrame"
+    class="map-frame"
+    src=""
+    data-src="https://maps.google.com/maps?q=UNIQUE%20PHARMACY%2C+Mumbai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    loading="lazy"
+    allowfullscreen
+    title="Unique Pharmacy Location">
+  </iframe>
+</div>
+
+<!-- ══ NOTICE ══ -->
+<div class="card">
+  <h2>⚠️ Important Notice</h2>
+  <div class="notice">
+    For <strong>NRx, TB, Cancer, Sleeping Pills, H1 &amp; Antibiotics</strong>:
+    customer must bring the <strong>original prescription</strong>.<br>
+    All Drug &amp; Pharmacy Council rules are strictly followed.
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <strong>UNIQUE PHARMACY</strong><br>
+  📍 Shop No. G55, Al Ezz Tower, Bohri Mohalla,<br>Bhendi Bazaar, Kumbharwada, Mumbai – 400003<br>
+  ⏰ Open 24 Hours, 7 Days a Week<br>
+  📞 <a href="tel:+919594290148">+91 95942 90148</a><br><br>
+  <small style="opacity:0.55">© 2025 Unique Pharmacy. All rights reserved.</small>
+</footer>
+
+<!-- ══ FLOATING WHATSAPP ══ -->
+<a class="whatsapp" href="https://wa.me/919594290148" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- ══ DOCK ══ -->
+<div class="dock">
+  <button class="dock-btn order" onclick="quickOrder()">📦 Order Now</button>
+  <button class="dock-btn call"  onclick="window.location='tel:+919594290148'">📞 Call Us</button>
+</div>
+
+<script>
+/* ── WhatsApp helpers ── */
+const WA = "https://wa.me/919594290148?text=";
+
+function order(cat) {
+  const msg = `Hi! I want to order ${cat}. Please confirm availability, price, discount and delivery time.`;
+  window.open(WA + encodeURIComponent(msg));
+}
+
+function quickOrder() {
+  const msg = "Hi! I want to order medicines. Please assist me with availability, price and delivery.";
+  window.open(WA + encodeURIComponent(msg));
+}
+
+function prescription() {
+  const msg = "Hi! I want to upload my prescription for medicines. Please guide me.";
+  window.open(WA + encodeURIComponent(msg));
+}
+
+/* ── Search → WhatsApp ── */
+function searchMedicine() {
+  const q = document.getElementById('searchInput').value.trim();
+  if (!q) { document.getElementById('searchInput').focus(); return; }
+  const msg = `Hi! I'm looking for "${q}". Is it available? Please share price, discount and delivery details.`;
+  window.open(WA + encodeURIComponent(msg));
+}
+
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') searchMedicine();
+});
+
+/* ── Lazy map load ── */
+function loadMap() {
+  const frame = document.getElementById('mapFrame');
+  const thumb = document.getElementById('mapThumb');
+  frame.src = frame.dataset.src;
+  frame.style.display = 'block';
+  thumb.style.display = 'none';
+}
+
+/* ══ PWA: Inline Manifest ══ */
+const manifest = {
+  name: "Unique Pharmacy",
+  short_name: "Unique Rx",
+  description: "24×7 Trusted Medical Store – Order medicines on WhatsApp",
+  start_url: "./",
+  display: "standalone",
+  background_color: "#f3e8ff",
+  theme_color: "#7b3fe4",
+  orientation: "portrait",
+  icons: [
+    { src: "https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg", sizes: "192x192", type: "image/jpeg" },
+    { src: "https://i.postimg.cc/FRDqcPLK/1769888939545-2.jpg", sizes: "512x512", type: "image/jpeg" }
+  ]
+};
+const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+document.getElementById('manifestLink').href = URL.createObjectURL(manifestBlob);
+
+/* ══ PWA: Service Worker (inline via blob) ══ */
+const swCode = `
+self.addEventListener('install', e => self.skipWaiting());
+self.addEventListener('activate', e => clients.claim());
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.open('unique-pharmacy-v1').then(cache =>
+      cache.match(e.request).then(hit => {
+        const fresh = fetch(e.request).then(res => {
+          if (e.request.method === 'GET') cache.put(e.request, res.clone());
+          return res;
+        });
+        return hit || fresh;
+      })
+    )
+  );
+});
+`;
+if ('serviceWorker' in navigator) {
+  const swBlob = new Blob([swCode], { type: 'text/javascript' });
+  const swUrl  = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+
+/* ══ Add to Home Screen Logic ══ */
+const banner    = document.getElementById('a2hsBanner');
+const installBtn= document.getElementById('a2hsInstall');
+const closeBtn  = document.getElementById('a2hsClose');
+const iosTip    = document.getElementById('iosTip');
+const iosTipClose = document.getElementById('iosTipClose');
+
+let deferredPrompt = null;
+
+// Detect iOS
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+// Don't show if already installed
+if (!isInStandaloneMode && !sessionStorage.getItem('a2hs_dismissed')) {
+  if (isIOS) {
+    // iOS: show after 3 seconds
+    setTimeout(() => banner.classList.add('show'), 3000);
+    installBtn.textContent = 'How?';
+    installBtn.addEventListener('click', () => {
+      banner.classList.remove('show');
+      iosTip.classList.add('show');
+    });
+  } else {
+    // Android/Chrome: wait for beforeinstallprompt
+    window.addEventListener('beforeinstallprompt', e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      setTimeout(() => banner.classList.add('show'), 3000);
+    });
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      banner.classList.remove('show');
+      sessionStorage.setItem('a2hs_dismissed', '1');
+    });
+  }
+}
+
+closeBtn.addEventListener('click', () => {
+  banner.classList.remove('show');
+  sessionStorage.setItem('a2hs_dismissed', '1');
+});
+
+iosTipClose.addEventListener('click', () => {
+  iosTip.classList.remove('show');
+  sessionStorage.setItem('a2hs_dismissed', '1');
+});
+</script>
+
+</body>
+</html>
