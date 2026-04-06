@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Unique Pharmacy</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:  #7b3fe4;
+      --purple2: #9c27b0;
+      --surface: rgba(255,255,255,0.78);
+      --radius:  18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(150deg, #f3e8ff 0%, #ede9fe 50%, #e8f5e9 100%);
+      min-height: 100vh;
+      color: #1a1a2e;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #4a0080, #7b3fe4, #9c27b0);
+      color: #fff;
+      padding: 28px 20px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    header h1 {
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    header p {
+      font-size: 13px;
+      opacity: 0.85;
+      margin: 4px 0;
+      position: relative;
+    }
+
+    /* ── BUTTON ROW ── */
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn svg { width: 18px; height: 18px; fill: white; }
+
+    .btn:hover { 
+      transform: scale(1.05);
+      background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.2));
+    }
+
+    /* ── CONTAINER ── */
+    .container { 
+      max-width: 1100px; 
+      margin: auto; 
+      padding: 0 15px;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    .card h3 { 
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--purple);
+    }
+
+    .card p { 
+      opacity: 0.75;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    .form-card h2 { 
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: var(--purple);
+    }
+
+    .form-card input, 
+    .form-card select, 
+    .form-card textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      border: 2px solid rgba(123,63,228,0.2);
+      background: rgba(255,255,255,0.9);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus,
+    .form-card textarea:focus {
+      border-color: var(--purple);
+    }
+
+    .form-card button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, #7b3fe4, #9c27b0);
+      color: white;
+      cursor: pointer;
+      margin-top: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .form-card button:hover {
+      transform: scale(1.02);
+    }
+
+    /* ── MAP ── */
+    .map-container {
+      margin: 20px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: var(--radius);
+      border: none;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #4a0080, #7b3fe4, #9c27b0);
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .footer h3 { 
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .footer p, .footer a {
+      font-size: 13px;
+      opacity: 0.85;
+      text-decoration: none;
+      color: white;
+      display: block;
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    .footer a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Contact Unique Pharmacy</h1>
+    <p>We're here to help you with orders, medicines, and support — anytime.</p>
+
+    <div class="buttons">
+      <a href="tel:+919594290148" class="btn">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011-.24c1.1.37 2.3.57 3.5.57a1 1 0 011 1V21a1 1 0 01-1 1C10.3 22 2 13.7 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.4.57 3.5a1 1 0 01-.24 1L6.6 10.8z"/></svg>
+        Call Now
+      </a>
+
+      <a href="https://wa.me/919594290148" class="btn">
+        <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0012.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.6 1.4 5.6 1.4h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4zM12.1 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.7 1 1-3.6-.2-.4a9.4 9.4 0 01-1.4-5c0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8a9.4 9.4 0 012.8 6.7c0 5.2-4.2 9.4-9.4 9.4zm5.2-7.1c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1s-.8.9-1 .1c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.4.1-.1.2-.3.3-.5.1-.2 0-.4 0-.6 0-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.2 2.4 3.7 5.8 5 .8.3 1.4.5 1.9.6.8.3 1.5.2 2 .1.6-.1 1.7-.7 2-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="cards">
+      <div class="card">
+        <h3>Customer Support</h3>
+        <p>Get quick help regarding orders, availability, and general queries.</p>
+      </div>
+
+      <div class="card">
+        <h3>Business / Bulk Orders</h3>
+        <p>Contact us for bulk medicine orders or partnership inquiries.</p>
+      </div>
+
+      <div class="card">
+        <h3>Feedback & Complaints</h3>
+        <p>We value your feedback to improve our service and experience.</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Send a Message</h2>
+
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+
+      <select id="queryType">
+        <option>General Inquiry</option>
+        <option>Order Issue</option>
+        <option>Medicine Inquiry</option>
+        <option>Complaint</option>
+        <option>Feedback</option>
+        <option>Vacancy / Jobs</option>
+      </select>
+
+      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+
+      <button onclick="sendMessage()">Submit</button>
+    </div>
+
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+  </div>
+
+  <script>
+    (function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
+
+    function sendMessage() {
+      let name = document.getElementById('name').value.trim();
+      let phone = document.getElementById('phone').value.trim();
+      let type = document.getElementById('queryType').value;
+      let msg = document.getElementById('message').value.trim();
+
+      if (!name || !phone || !msg) {
+        alert('Please fill all fields properly');
+        return;
+      }
+
+      let templateParams = {
+        name: name,
+        phone: phone,
+        type: type,
+        message: msg
+      };
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(function() {
+          alert("Message sent successfully!");
+        }, function(error) {
+          alert("Failed to send. Try again.");
+        });
+
+      let waMsg = `Hello, I am ${name}%0A📞 Phone: ${phone}%0A📌 Query: ${type}%0A📝 Message: ${msg}`;
+      window.open(`https://wa.me/919594290148?text=${waMsg}`, '_blank');
+    }
+  </script>
+
+  <footer>
+    <div class="footer-container">
+
+      <div class="footer">
+        <h3>Unique Pharmacy</h3>
+        <p>Your trusted partner for genuine medicines and fast delivery.</p>
+      </div>
+
+      <div class="footer">
+        <h3>Quick Links</h3>
+        <a href="https://uniquepharmacy.github.io/HOME/">Home</a>
+        <a href="#">About Us</a>
+      </div>
+
+      <div class="footer">
+        <h3>Contact</h3>
+        <p>📞 +91 9594290148</p>
+        <p>📍 Shop No. G55, Al Ezz Tower,<br>Bohri Mohalla,<br>Bhendi Bazaar, Kumbharwada,<br>Mumbai – 400003</p>
+        <p>🕒 Open 24×7</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Unique Pharmacy. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
